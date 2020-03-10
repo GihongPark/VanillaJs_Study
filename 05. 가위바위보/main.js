@@ -40,11 +40,12 @@ document.querySelectorAll('.btn').forEach(function(btn) {
  
         const mySelect = this.textContent;
         const comSelect = findComputerValue(computer);
+        const difference = score[mySelect] - score[comSelect]
 
-        if(score[mySelect] - score[comSelect] === 0) {
+        if(difference === 0) {
             console.log("비겼습니다.")
         //} else if(score[mySelect] - score[comSelect] === -1 || score[mySelect] - score[comSelect] === 2) {
-        } else if([-1, 2].includes(score[mySelect] - score[comSelect])) {   // 배열안의 값들 중 파라미터 값이 잇으면 true
+        } else if([-1, 2].includes(difference)) {   // 배열안의 값들 중 파라미터 값이 잇으면 true
             console.log("이겼습니다.");
         } else {
             console.log("졌습니다.");
