@@ -47,3 +47,21 @@ setTimeout(function() {
 setTimeout(function() {
     console.log(i);
 }, 9 * 1000);
+
+
+// 해결법
+for(var i=0; i<10; i++){
+    function closure(j) {
+        setTimeout(function() {
+            console.log(j);
+        }, j * 1000);
+    }
+    closure(i);
+}
+for(var i=0; i<10; i++){
+    (function closure(j) {
+        setTimeout(function() {
+            console.log(j);
+        }, j * 1000);
+    })(i); // 즉시 실행 함수
+}
